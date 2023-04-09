@@ -1,3 +1,4 @@
 webserver/upload_folder/*
 vnev/
 .idea/
+__pycache__/
