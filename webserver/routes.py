@@ -5,7 +5,7 @@ from brain import brain
 
 
 UPLOAD_FOLDER = './upload_folder'
-ALLOWED_EXTENSIONS = {'txt', 'png', 'wav'}
+ALLOWED_EXTENSIONS = {'wav'}
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -20,10 +20,10 @@ def allowed_file(filename):
 
 @routes.route("/upload", methods=['POST'])
 def upload():
-    if 'sussy' not in request.form:
-        return jsonify({"response": "not valid"})
-    if request.form['sussy'] != 'amongus':
-        return jsonify({"response": "not valid"})
+    #if 'sussy' not in request.form:
+    #    return jsonify({"response": "not valid"})
+    #if request.form['sussy'] != 'amongus':
+    #    return jsonify({"response": "not valid"})
     if 'file' not in request.files:
         return jsonify({"response": "no file"})
     file = request.files['file']

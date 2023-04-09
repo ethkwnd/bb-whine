@@ -64,7 +64,6 @@ import math, random
 import torch
 import torchaudio
 from torchaudio import transforms
-from IPython.display import Audio
 
 class AudioUtil():
   # Load an audio file. Return the signal as a tensor and the sample rate
@@ -175,8 +174,3 @@ class AudioUtil():
       aug_spec = transforms.TimeMasking(time_mask_param)(aug_spec, mask_value)
 
     return aug_spec
-  
-
-
-data = df['name'].apply(lambda x: AudioUtil.open('donateacry/' + x))
-data.apply(lambda x: x[0].shape[1]).median()
