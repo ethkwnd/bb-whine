@@ -1,0 +1,4 @@
+
+This code initializes a MediaRecorder object, sets up the audio source, output format, and encoder, and starts/stops the recording when the user clicks the record button. It also handles runtime permissions for audio recording and external storage.
+
+Now your sleek, modern Android app is ready. Build and run the app in Android Studio by clicking on the "Run" button (green triangle) in the top-right corner of the window. Make sure you have a physical device or an emulator with microphone support to test the recording feature.

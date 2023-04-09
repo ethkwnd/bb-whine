@@ -1,6 +1,7 @@
 import os
 from flask import Flask, request, Blueprint, jsonify
 from werkzeug.utils import secure_filename
+from brain import brain
 
 
 UPLOAD_FOLDER = './upload_folder'
@@ -27,6 +28,9 @@ def upload():
         return jsonify({"response": "no file"})
     file = request.files['file']
     if file and allowed_file(file.filename):
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
-        return jsonify({"response": "success"})
+        filename = secure_filename(file.filename)
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(file_path)
+        error_code = brain(file_path)
+        return jsonify({"response": error_code})
     return jsonify({"response": "not valid"})
